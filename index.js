@@ -24,7 +24,7 @@ app.use(async (ctx, next) => {
 app.use(apiRoute.routes())
 app.use(apiRoute.allowedMethods())
 
-
-app.listen(3000, () => {
-  console.log('We are now live on port 3000!')
+const port = $PORT || 3000
+app.listen(port, () => {
+  console.log(`We are now live on port 3000!`)
 })
