@@ -26,5 +26,5 @@ app.use(apiRoute.allowedMethods())
 
 const port = process.env.PORT || 3000
 app.listen(port, () => {
-  console.log(`We are now live on port 3000!`)
+  console.log(`We are now live on port ${port}!`)
 })
