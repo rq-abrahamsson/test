@@ -1,11 +1,19 @@
-const knex = require('knex')({
-  client: 'pg',
-  connection: {
-    user: 'robin.abrahamsson',
-    database: 'todo-api'
-  },
-  searchPath: ['knex', 'public'],
-});
+const knex = process.env.NODE_ENV === 'production' ?
+  require('knex')({
+    client: 'pg',
+    connectionString: process.env.DATABASE_URL,
+    ssl: true,
+    searchPath: ['knex', 'public'],
+  }) :
+  require('knex')({
+    client: 'pg',
+    connection: {
+      user: 'robin.abrahamsson',
+      database: 'todo-api'
+    },
+    searchPath: ['knex', 'public'],
+  })
+
 
 const getAllTodos = () => {
   return knex.select().from('todos')
