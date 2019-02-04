@@ -2,6 +2,10 @@ const Router = require('koa-router')
 const router = new Router()
 const databaseService = require('./databaseService')
 
+router.get('/health', async ctx => {
+  ctx.body = 'OK'
+})
+
 router.get('/api/todo/', async ctx => {
   ctx.body = await databaseService.getAllTodos()
 })
