@@ -35,11 +35,6 @@ jobs:
             - node_modules
           key: v1-dependencies-{{ checksum "package.json" }}
         
-
-      - run: # run tests
-          name: test
-          command: yarn test
-
       - run: 
           name: migrate
           command: yarn migrate
