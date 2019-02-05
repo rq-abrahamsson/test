@@ -37,6 +37,8 @@ jobs:
         
       # run tests!
       - run: yarn test
+
+      - migration:
       - run: yarn migrate
 
 workflows:
