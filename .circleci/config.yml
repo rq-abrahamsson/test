@@ -38,12 +38,12 @@ jobs:
       # run tests!
       - run: yarn test
 
-      - deploy:
-          command: yarn migrate
+      - run: yarn migrate
 
 workflows:
   heroku_deploy:
     jobs:
+      - build
       - heroku/deploy-via-git
 
 
