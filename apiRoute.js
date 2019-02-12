@@ -3,7 +3,7 @@ const router = new Router()
 const databaseService = require('./databaseService')
 
 router.get('/health', async ctx => {
-  ctx.body = 'OK'
+  ctx.body = 'OK hej'
 })
 
 router.get('/api/todo/', async ctx => {
